@@ -17,14 +17,15 @@ const TodoWrapper = styled.div<{ completed: boolean }>`
     }
 `
 
-interface TodoProps {
+export interface TodoProps {
     todo: TodoModel
     toggleCompleted(todoID: string): void
+    className?: string
 }
 
-const Todo = ({ todo, toggleCompleted }: TodoProps): JSX.Element => {
+const Todo = ({ todo, toggleCompleted, className }: TodoProps): JSX.Element => {
     return (
-        <TodoWrapper completed={todo.completed} onDoubleClick={_ => toggleCompleted(todo.id)}>
+        <TodoWrapper className={className} completed={todo.completed} onDoubleClick={_ => toggleCompleted(todo.id)}>
             <p>{todo.task}</p>
             <input 
                 type="checkbox"
