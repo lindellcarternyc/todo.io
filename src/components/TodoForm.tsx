@@ -53,11 +53,13 @@ interface TodoFormProps {
     newTask: string
     onChange(_: string): void
     clearCompleted(): void
+    addTodo(): void
 }
 
-const TodoForm = ({ newTask, onChange, clearCompleted }: TodoFormProps): JSX.Element => {
+const TodoForm = ({ newTask, onChange, clearCompleted, addTodo }: TodoFormProps): JSX.Element => {
     const onSubmit = (evt: React.FormEvent) => {
         evt.preventDefault()
+        addTodo()
     }
 
     const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {

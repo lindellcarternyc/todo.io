@@ -11,7 +11,7 @@ interface TodoState {
 }
 
 interface TodoAPI {
-    toggleComplete(todoID: string): void
+    toggleCompleted(todoID: string): void
     clearCompleted(): void
     changeNewTask(task: string): void
     addTodo(): void
@@ -21,7 +21,7 @@ const useTodos = (): [TodoState, TodoAPI] => {
     const [todos, setTodos] = useLocalStorage<TodoModel[]>('todos', [])
     const [newTask, setNewTask] = useState('')
 
-    const toggleComplete = (todoID: string) => {
+    const toggleCompleted = (todoID: string) => {
         setTodos(todos.map(todo => {
             if (todo.id === todoID) {
                 return {
@@ -59,7 +59,7 @@ const useTodos = (): [TodoState, TodoAPI] => {
         {
             todos, newTask
         }, {
-            toggleComplete,
+            toggleCompleted,
             clearCompleted,
             changeNewTask,
             addTodo
