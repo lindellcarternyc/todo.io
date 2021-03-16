@@ -3,8 +3,7 @@ import styled from 'styled-components'
 
 const TodoFormWrapper = styled.div`
     display: flex;
-    margin: 0 auto 1rem;
-    max-width: 600px;
+    margin-bottom: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;

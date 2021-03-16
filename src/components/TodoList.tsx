@@ -5,9 +5,7 @@ import { TodoModel } from '../models/Todo.model'
 import Todo from './Todo'
 
 const TodoListWrapper = styled.div`
-    max-width: 600px;
-    margin: 0 auto;
-    overflow-x: hidden;
+
 `
 
 interface TodoListProps {
